@@ -1,0 +1,170 @@
+
+//element colors 
+$main-background-color: hsl(233, 47%, 7%);
+$card-background-color: hsl(244, 38%, 16%);
+$accent-color: hsl(277, 64%, 61%);
+
+//text colors
+$main-heading-color: hsl(0, 0%, 100%);
+$main-paragraph-color: hsla(0, 0%, 100%, 0.75);
+$stat-headings-color: hsla(0, 0%, 100%, 0.6);
+
+//display widths
+$mobile-width: 375px;
+$desktop-width: 1440px;
+
+//heading paragraph stats
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.fullWrapper{
+    height: 100vh;
+    width: 100vw;
+    min-width: 1024px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $main-background-color;
+}
+
+.cardWrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+    grid-template-areas:  
+    'heading picture'
+    'paragraph picture'
+    'stats picture';
+    margin-bottom: .5rem;
+    background-color: $card-background-color;
+}
+
+.heading{
+    color: $main-heading-color;
+    grid-area: heading;
+    padding: 1.5rem ;
+    font-family: 'Inter', sans-serif;
+}
+
+.heading span{
+    color: $accent-color;
+}
+
+.paragraph{
+    color: $main-paragraph-color;
+    grid-area: paragraph;
+    padding: 1.5rem;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;;
+}
+
+.statsWrapper{
+    grid-area: stats;
+    display: flex;
+    padding: 1.5rem;
+}
+
+.stats{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $stat-headings-color;
+    width: 33.3%;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.stats h1{
+    color: $main-heading-color;
+    font-size: 2rem;
+}
+
+.templates{
+    align-items: center;
+}
+
+.queries{
+    align-items: center;
+}
+
+.picture{
+    display: block;
+    grid-area: picture;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+
+.mixBlend{
+    mix-blend-mode: multiply;
+}
+
+.container{
+    background-color: $accent-color ;
+}
+
+.attribution{ 
+    font-size: 11px; 
+    text-align: center;
+    color: $main-paragraph-color; 
+    margin-bottom: .8rem;
+}
+    
+.attribution a{ 
+     color: hsl(228, 45%, 44%); 
+    }
+
+
+@media screen and (max-width: 550px) {
+    .fullWrapper{
+        min-width: 0;
+        height: 100%;
+    }
+
+    .cardWrapper{
+        grid-template-columns: 375px;
+        width:fit-content;
+        grid-template-areas: 
+        'picture'
+        'heading'
+        'paragraph'
+        'stats'
+    }
+
+    .statsWrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .picture{
+        background-position: right center;
+        background-size: cover;
+        display: block;
+    }
+
+    .queries{
+        align-items: center;
+    }
+
+    .templates{
+        margin-bottom: 1.5rem;
+    }
+
+    .companies{
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .heading{
+        text-align: center;
+    }
+
+    .paragraph{
+        text-align: center;
+    }
+}

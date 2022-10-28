@@ -1,0 +1,139 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.fullWrapper {
+  height: 100vh;
+  width: 100vw;
+  min-width: 1024px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(233deg, 47%, 7%);
+}
+
+.cardWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 90%;
+  grid-template-areas: "heading picture" "paragraph picture" "stats picture";
+  margin-bottom: 0.5rem;
+  background-color: hsl(244deg, 38%, 16%);
+}
+
+.heading {
+  color: hsl(0deg, 0%, 100%);
+  grid-area: heading;
+  padding: 1.5rem;
+  font-family: "Inter", sans-serif;
+}
+
+.heading span {
+  color: hsl(277deg, 64%, 61%);
+}
+
+.paragraph {
+  color: hsla(0deg, 0%, 100%, 0.75);
+  grid-area: paragraph;
+  padding: 1.5rem;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+}
+
+.statsWrapper {
+  grid-area: stats;
+  display: flex;
+  padding: 1.5rem;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: hsla(0deg, 0%, 100%, 0.6);
+  width: 33.3%;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+}
+
+.stats h1 {
+  color: hsl(0deg, 0%, 100%);
+  font-size: 2rem;
+}
+
+.templates {
+  align-items: center;
+}
+
+.queries {
+  align-items: center;
+}
+
+.picture {
+  display: block;
+  grid-area: picture;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+}
+
+.mixBlend {
+  mix-blend-mode: multiply;
+}
+
+.container {
+  background-color: hsl(277deg, 64%, 61%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: hsla(0deg, 0%, 100%, 0.75);
+  margin-bottom: 0.8rem;
+}
+
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}
+
+@media screen and (max-width: 550px) {
+  .fullWrapper {
+    min-width: 0;
+    height: 100%;
+  }
+  .cardWrapper {
+    grid-template-columns: 375px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    grid-template-areas: "picture" "heading" "paragraph" "stats";
+  }
+  .statsWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .picture {
+    background-position: right center;
+    background-size: cover;
+    display: block;
+  }
+  .queries {
+    align-items: center;
+  }
+  .templates {
+    margin-bottom: 1.5rem;
+  }
+  .companies {
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  .heading {
+    text-align: center;
+  }
+  .paragraph {
+    text-align: center;
+  }
+}/*# sourceMappingURL=style.css.map */
